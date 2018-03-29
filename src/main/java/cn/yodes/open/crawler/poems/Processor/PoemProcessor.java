@@ -8,8 +8,7 @@ import us.codecraft.webmagic.processor.PageProcessor;
 
 import java.util.List;
 
-public class OschinaBlogPageProcesser implements PageProcessor {
-
+public class PoemProcessor implements PageProcessor {
     private Site site = Site.me()
             .setDomain("open.yodes.cn/Crawler")
             .setRetrySleepTime(3)
@@ -33,7 +32,7 @@ public class OschinaBlogPageProcesser implements PageProcessor {
     }
 
     public static void main(String[] args) {
-        Spider.create(new OschinaBlogPageProcesser()).addUrl("http://www.shicimingju.com/chaxun/zuozhe/29.html")
+        Spider.create(new PoemProcessor()).addUrl("http://www.shicimingju.com/chaxun/zuozhe/29.html")
                 .addPipeline(new FilePipeline()).run();
     }
 }

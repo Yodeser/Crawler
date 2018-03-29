@@ -1,5 +1,6 @@
 package cn.yodes.open.crawler.poems.web;
 
+import cn.yodes.open.crawler.poems.Processor.PoemProcessor;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.model.ConsolePageModelPipeline;
 import us.codecraft.webmagic.model.OOSpider;
@@ -19,7 +20,7 @@ import java.util.List;
  * @since 2018/3/29 14:52
  */
 @TargetUrl("http://my.oschina.net/flashsword/blog/\\d+")
-public class OschinaBlog {
+public class PoemsCrawler {
 
     @ExtractBy("//title")
     private String title;
@@ -31,8 +32,6 @@ public class OschinaBlog {
     private List<String> tags;
 
     public static void main(String[] args) {
-        OOSpider.create(
-                Site.me(),
-                new ConsolePageModelPipeline(), OschinaBlog.class).addUrl("http://my.oschina.net/flashsword/blog").run();
+        new PoemProcessor();
     }
 }
