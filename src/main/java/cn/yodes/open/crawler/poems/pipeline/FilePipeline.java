@@ -22,12 +22,12 @@ public class FilePipeline implements Pipeline {
     @Override
     public void process(ResultItems resultItems, Task task) {
         PoemEntity poemEntity = new PoemEntity();
-        poemEntity.setTitle(resultItems.get("title").toString());
-        poemEntity.setDynasty(resultItems.get("dynasty").toString());
-        poemEntity.setAuthor(resultItems.get("author").toString());
-        poemEntity.setContent(resultItems.get("content").toString());
+        poemEntity.setTitle(resultItems.get("title").toString().trim());
+        poemEntity.setDynasty(resultItems.get("dynasty").toString().trim());
+        poemEntity.setAuthor(resultItems.get("author").toString().trim());
+        poemEntity.setContent(resultItems.get("content").toString().trim());
         poemEntity.setTags(resultItems.get("tags"));
-        poemEntity.setAppreciation(resultItems.get("appreciation").toString());
+        poemEntity.setAppreciation(resultItems.get("appreciation").toString().trim());
         log.info(poemEntity.toString());
     }
 }

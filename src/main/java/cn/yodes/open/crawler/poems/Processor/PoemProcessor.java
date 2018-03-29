@@ -5,8 +5,12 @@ import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.selector.Html;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PoemProcessor implements PageProcessor {
     private Site site = Site.me()
@@ -32,7 +36,11 @@ public class PoemProcessor implements PageProcessor {
     }
 
     public static void main(String[] args) {
-        Spider.create(new PoemProcessor()).addUrl("http://www.shicimingju.com/chaxun/zuozhe/29.html")
+        Html html = new Html("http://www.shicimingju.com/chaxun/zuozhe/29.html");
+        String[] urlList = html.xpath("//*/div[@class='pagination www-shadow-card']")
+                .links().xpath("http://www.shicimingju.com/chaxun/zuozhe/\\s+.html").all().toArray(args);
+        Spider.create(new PoemProcessor()).addUrl(urlList)
                 .addPipeline(new FilePipeline()).run();
+
     }
 }
