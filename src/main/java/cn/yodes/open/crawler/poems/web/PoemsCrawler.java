@@ -1,11 +1,12 @@
 package cn.yodes.open.crawler.poems.web;
 
-import cn.yodes.open.crawler.poems.Processor.PoemProcessor;
-import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.model.ConsolePageModelPipeline;
-import us.codecraft.webmagic.model.OOSpider;
+import cn.yodes.open.crawler.poems.pipeline.FilePipeline;
+import cn.yodes.open.crawler.poems.processor.PoemProcessor;
+import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.downloader.HttpClientDownloader;
 import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.model.annotation.TargetUrl;
+import us.codecraft.webmagic.selector.Html;
 
 import java.util.List;
 
@@ -19,19 +20,19 @@ import java.util.List;
  * @author Yangxingji
  * @since 2018/3/29 14:52
  */
-@TargetUrl("http://my.oschina.net/flashsword/blog/\\d+")
 public class PoemsCrawler {
 
-    @ExtractBy("//title")
-    private String title;
-
-    @ExtractBy(value = "div.BlogContent",type = ExtractBy.Type.Css)
-    private String content;
-
-    @ExtractBy(value = "//div[@class='BlogTags']/a/text()", multi = true)
-    private List<String> tags;
-
     public static void main(String[] args) {
-        new PoemProcessor();
+        HttpClientDownloader httpClientDownloader = new HttpClientDownloader();
+        String startUrl = "http://www.shicimingju.com/chaxun/zuozhe/29.html";
+
+        Html html = httpClientDownloader.download(startUrl);
+        PoemProcessor processor = new PoemProcessor();
+        String[] urlList = html.xpath("//*/div[@class='pagination www-shadow-card']")
+                .links()
+                .all()
+                .toArray(args);
+        Spider.create(processor).addUrl(startUrl).addUrl(urlList)
+                .addPipeline(new FilePipeline()).run();
     }
 }

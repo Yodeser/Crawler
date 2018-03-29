@@ -1,10 +1,8 @@
-package cn.yodes.open.crawler.poems.Processor;
+package cn.yodes.open.crawler.poems.processor;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
-
-import java.io.File;
 
 /**
  * <pre>

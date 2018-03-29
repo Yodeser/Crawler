@@ -1,17 +1,11 @@
-package cn.yodes.open.crawler.poems.Processor;
+package cn.yodes.open.crawler.poems.processor;
 
 import cn.yodes.open.crawler.poems.domain.PoemEntity;
-import cn.yodes.open.crawler.poems.pipeline.FilePipeline;
-import us.codecraft.webmagic.*;
-import us.codecraft.webmagic.downloader.Downloader;
-import us.codecraft.webmagic.downloader.HttpClientDownloader;
+import us.codecraft.webmagic.Page;
+import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
-import us.codecraft.webmagic.selector.Html;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class PoemProcessor implements PageProcessor {
     private Site site = Site.me()
@@ -46,19 +40,5 @@ public class PoemProcessor implements PageProcessor {
         return site;
     }
 
-    public static void main(String[] args) {
-        HttpClientDownloader httpClientDownloader = new HttpClientDownloader();
-        String startUrl = "http://www.shicimingju.com/chaxun/zuozhe/29.html";
 
-        Html html = httpClientDownloader.download(startUrl);
-        PoemProcessor processor = new PoemProcessor();
-        String[] urlList = html.xpath("//*/div[@class='pagination www-shadow-card']")
-                .links()
-                .all()
-                .toArray(args);
-        System.out.println(urlList.toString());
-        Spider.create(processor).addUrl(startUrl).addUrl(urlList)
-                .addPipeline(new FilePipeline()).run();
-
-    }
 }
