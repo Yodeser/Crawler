@@ -21,7 +21,7 @@ public class AuthorProcessor implements PageProcessor {
 
     @Override
     public void process(Page page) {
-
+        page.putField("data", page.getJson().toString());
     }
 
     @Override
