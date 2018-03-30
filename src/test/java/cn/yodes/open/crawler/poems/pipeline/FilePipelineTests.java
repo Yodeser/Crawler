@@ -11,5 +11,4 @@ package cn.yodes.open.crawler.poems.pipeline;
  * @created 2018/3/29 19:52
  */
 public class FilePipelineTests {
-
 }

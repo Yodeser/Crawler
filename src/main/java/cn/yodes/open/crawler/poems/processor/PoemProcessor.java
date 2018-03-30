@@ -30,7 +30,6 @@ public class PoemProcessor implements PageProcessor {
             }else{
                 poem.setAppreciation("本文无赏析");
             }
-
             page.putField("poem", poem);
         }
     }
