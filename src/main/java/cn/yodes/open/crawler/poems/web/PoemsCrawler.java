@@ -29,7 +29,6 @@ public class PoemsCrawler {
         HttpClientDownloader httpClientDownloader = new HttpClientDownloader();
         String startUrl = "http://www.shicimingju.com/chaxun/zuozhe/29.html";
 
-
         Html html = httpClientDownloader.download(startUrl);
         PoemProcessor processor = new PoemProcessor();
         String[] urlList = html.xpath("//*/div[@class='pagination www-shadow-card']")

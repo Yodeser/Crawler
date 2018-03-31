@@ -21,7 +21,7 @@ import java.io.IOException;
  * @since 2018/3/29 14:58
  */
 public class FilePipeline implements Pipeline {
-    Logger log = LoggerFactory.getLogger(FilePipeline.class);
+    private Logger log = LoggerFactory.getLogger(FilePipeline.class);
 
     @Override
     public void process(ResultItems resultItems, Task task) {
