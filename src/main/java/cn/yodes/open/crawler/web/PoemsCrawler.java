@@ -1,17 +1,10 @@
-package cn.yodes.open.crawler.poems.web;
+package cn.yodes.open.crawler.web;
 
-import cn.yodes.open.crawler.poems.pipeline.FilePipeline;
-import cn.yodes.open.crawler.poems.processor.PoemProcessor;
-import us.codecraft.webmagic.Request;
+import cn.yodes.open.crawler.pipeline.poem.FilePipeline;
+import cn.yodes.open.crawler.processor.poem.PoemProcessor;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.downloader.HttpClientDownloader;
-import us.codecraft.webmagic.model.HttpRequestBody;
-import us.codecraft.webmagic.model.annotation.ExtractBy;
-import us.codecraft.webmagic.model.annotation.TargetUrl;
 import us.codecraft.webmagic.selector.Html;
-import us.codecraft.webmagic.utils.HttpClientUtils;
-
-import java.util.List;
 
 /**
  * <pre>

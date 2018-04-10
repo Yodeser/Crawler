@@ -1,12 +1,8 @@
-package cn.yodes.open.crawler.poems.service;
+package cn.yodes.open.crawler.service;
 
-import cn.yodes.open.crawler.poems.pipeline.AuthorPipeline;
-import cn.yodes.open.crawler.poems.processor.AuthorProcessor;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import us.codecraft.webmagic.Request;
-import us.codecraft.webmagic.Spider;
 
 /**
  * <pre>

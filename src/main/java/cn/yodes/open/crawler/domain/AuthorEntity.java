@@ -1,4 +1,4 @@
-package cn.yodes.open.crawler.poems.domain;
+package cn.yodes.open.crawler.domain;
 
 /**
  * <pre>

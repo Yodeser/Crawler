@@ -1,6 +1,6 @@
-package cn.yodes.open.crawler.poems.pipeline;
+package cn.yodes.open.crawler.pipeline.poem;
 
-import cn.yodes.open.crawler.poems.domain.PoemEntity;
+import cn.yodes.open.crawler.domain.PoemEntity;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

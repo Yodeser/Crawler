@@ -1,6 +1,6 @@
-package cn.yodes.open.crawler.poems.pipeline;
+package cn.yodes.open.crawler.pipeline.poem;
 
-import cn.yodes.open.crawler.poems.domain.AuthorEntity;
+import cn.yodes.open.crawler.domain.AuthorEntity;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.pipeline.Pipeline;

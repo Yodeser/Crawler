@@ -1,6 +1,6 @@
-package cn.yodes.open.crawler.poems.processor;
+package cn.yodes.open.crawler.processor.poem;
 
-import cn.yodes.open.crawler.poems.domain.PoemEntity;
+import cn.yodes.open.crawler.domain.PoemEntity;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
@@ -11,7 +11,7 @@ public class PoemProcessor implements PageProcessor {
     private Site site = Site.me()
             .setDomain("http://www.shicimingju.com/")
             .setRetrySleepTime(3)
-            .setSleepTime(1000);
+            .setSleepTime(50);
 
     @Override
     public void process(Page page) {

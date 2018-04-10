@@ -1,6 +1,6 @@
-package cn.yodes.open.crawler.poems.processor;
+package cn.yodes.open.crawler.processor.poem;
 
-import cn.yodes.open.crawler.poems.domain.AuthorEntity;
+import cn.yodes.open.crawler.domain.AuthorEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import us.codecraft.webmagic.Page;

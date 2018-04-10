@@ -1,12 +1,12 @@
-package cn.yodes.open.crawler.poems;
+package cn.yodes.open.crawler;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PoemsApplication {
+public class CrawlerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PoemsApplication.class, args);
+		SpringApplication.run(CrawlerApplication.class, args);
 	}
 }

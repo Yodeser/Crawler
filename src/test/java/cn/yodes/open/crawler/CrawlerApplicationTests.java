@@ -1,4 +1,4 @@
-package cn.yodes.open.crawler.poems;
+package cn.yodes.open.crawler;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class PoemsApplicationTests {
+public class CrawlerApplicationTests {
 
 	@Test
 	public void contextLoads() {

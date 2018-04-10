@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.yodes.open.crawler</groupId>
-    <artifactId>poems</artifactId>
-    <version>0.0.1</version>
+    <groupId>cn.yodes.open</groupId>
+    <artifactId>crawler</artifactId>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
 
-    <name>poems</name>
-    <description>爬取诗词信息</description>
+    <name>Crawler</name>
+    <description>爬虫</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
