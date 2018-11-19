@@ -9,11 +9,9 @@ import us.codecraft.webmagic.selector.Html;
 /**
  * <pre>
  * <p>Description: //TODO</p>
- * <p>Copyright (c) 2018 www.oppo.com Inc. All rights reserved.</p>
- * <p>Company: OPPO</p>
  * </pre>
  *
- * @author Yangxingji
+ * @author Yodes Yang
  * @since 2018/3/29 14:52
  */
 public class PoemsCrawler {
