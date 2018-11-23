@@ -2,7 +2,6 @@ package cn.yodes.open.crawler.processor.game;
 
 import org.apache.commons.lang3.StringUtils;
 import org.assertj.core.util.Lists;
-import org.jsoup.helper.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import us.codecraft.webmagic.Page;
@@ -13,7 +12,7 @@ import java.util.List;
 
 /**
  * <pre>
- * <p>Description: //TODO</p>
+ * <p>Description: 站点收集器
  * <p>Copyright (c) 2018 yodes.cn Inc. All rights reserved.</p>
  * </pre>
  *
@@ -30,7 +29,6 @@ public class SiteProcessor implements PageProcessor {
 
     @Override
     public void process(Page page) {
-//        log.info(page.getHtml().toString());
         List<String> url = page.getHtml().xpath("//*/div[@class='list-ctt-div']/li/a/@href").all();
         url.addAll(page.getHtml().xpath("//*/div[@class='list-div arc-list-wrap']/ul/li/a/@href").all());
         page.putField("url", url);

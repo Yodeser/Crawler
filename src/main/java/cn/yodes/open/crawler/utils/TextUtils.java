@@ -4,6 +4,8 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * <pre>
@@ -27,6 +29,26 @@ public class TextUtils {
     public static String filterOthers() throws IOException {
         String textStr = FileUtils.readFileToString(new File("C:\\Users\\Administrator\\Desktop\\Spider\\Music\\Hip-Hop\\all_irc.txt"), "utf8");
         return textStr.replaceAll("[^a-zA-Z\\s+']", "").toLowerCase();
+    }
 
+    public static String filterHtmlTag(String htmlStr) {
+        //定义正则表达式
+        String regExScript = "<script[^>]*?>[\\s\\S]*?</script>";
+        String regExStyle = "<style[^>]*?>[\\s\\S]*?</style>";
+        String regExHtml = "<[^>]+>";
+
+        Pattern pScript = Pattern.compile(regExScript, Pattern.CASE_INSENSITIVE);
+        Matcher mScript = pScript.matcher(htmlStr);
+        htmlStr = mScript.replaceAll("");
+
+        Pattern pStyle = Pattern.compile(regExStyle, Pattern.CASE_INSENSITIVE);
+        Matcher mStyle = pStyle.matcher(htmlStr);
+        htmlStr = mStyle.replaceAll("");
+
+        Pattern pHtml = Pattern.compile(regExHtml, Pattern.CASE_INSENSITIVE);
+        Matcher mHtml = pHtml.matcher(htmlStr);
+        htmlStr = mHtml.replaceAll("");
+
+        return htmlStr.trim();
     }
 }
