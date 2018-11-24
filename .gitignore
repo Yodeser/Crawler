@@ -26,3 +26,4 @@ nbdist/
 
 # 配置
 .properties
+/src/main/resources/application.properties
